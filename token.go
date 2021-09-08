@@ -25,8 +25,8 @@ func (c *WorkwxApp) SetAccessTokenFunc(tokenFunc func() (string, int64, error)) 
 	c.accessTokenFunc = tokenFunc
 }
 
-func (c *WorkwxApp) GetAccessTokenFunc() (string, int64, error) {
-	return c.accessTokenFunc()
+func (c *WorkwxApp) GetAccessTokenFunc() func() (string, int64, error) {
+	return c.accessTokenFunc
 }
 
 func (c *WorkwxApp) defaultAccessTokenFunc() (string, int64, error) {
@@ -44,7 +44,7 @@ func (c *WorkwxApp) defaultAccessTokenFunc() (string, int64, error) {
 
 // getAccessToken 获取 access token
 func (c *WorkwxApp) getAccessToken() (tokenInfo, error) {
-	token, expiresIn, err := c.GetAccessTokenFunc()
+	token, expiresIn, err := c.GetAccessTokenFunc()()
 	if err != nil {
 		return tokenInfo{}, err
 	}
