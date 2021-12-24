@@ -4,6 +4,10 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/61qt/go-workwx)](https://goreportcard.com/report/github.com/61qt/go-workwx)
 [![GoDoc](http://godoc.org/github.com/61qt/go-workwx?status.svg)](http://godoc.org/github.com/61qt/go-workwx)
 
+[**本项目需要您的帮助！**][maintainer-needed]
+
+[maintainer-needed]: https://github.com/xen0n/go-workwx/issues/73
+
 ```go
 import (
     "github.com/61qt/go-workwx" // package workwx
