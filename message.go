@@ -132,10 +132,14 @@ func (c *WorkwxApp) SendNewsMessage(
 		recipient,
 		"news",
 		map[string]interface{}{
-			"title":       title,
-			"description": description, // TODO: 零值
-			"url":         url,
-			"picurl":      picURL, // TODO: 零值
+			"articles": []map[string]interface{}{
+				{
+					"title":       title,
+					"description": description, // TODO: 零值
+					"url":         url,
+					"picurl":      picURL, // TODO: 零值
+				},
+			},
 		}, isSafe,
 	)
 }
